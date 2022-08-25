@@ -59,7 +59,7 @@ jobs:
           TARGET_DIR=releases/ya-runtime-http-auth-linux-${TAG_NAME}
 
           ls -la target
-          mkdir -p "$TARGET_DIR/aarch64-unknown-linux-musl"
+          mkdir -p "$TARGET_DIR/ya-runtime-http-auth"
           #strip "target/aarch64-unknown-linux-musl/release/ya-runtime-http-auth"
           #strip "target/aarch64-unknown-linux-musl/release/ya-http-proxy"
 
