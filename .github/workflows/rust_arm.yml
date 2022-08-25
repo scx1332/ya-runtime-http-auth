@@ -39,14 +39,14 @@ jobs:
         with:
           use-cross: true
           command: build
-          args: --manifest-path crates/ya-http-proxy/Cargo.toml --bin ya-http-proxy --features bin --release --target aarch64-unknown-linux-musl
+          args: -p ya-http-proxy --bin ya-http-proxy --features bin --release --target aarch64-unknown-linux-musl
 
       - name: Build runtime
         uses: actions-rs/cargo@v1
         with:
           use-cross: true
           command: build
-          args: --manifest-path crates/ya-http-proxy/Cargo.toml --release --target aarch64-unknown-linux-musl
+          args: --release --target aarch64-unknown-linux-musl
 
       - name: Pack
         id: pack
