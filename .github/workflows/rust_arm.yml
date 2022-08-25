@@ -60,8 +60,8 @@ jobs:
 
           ls -la target
           mkdir -p "$TARGET_DIR/aarch64-unknown-linux-musl"
-          strip "target/aarch64-unknown-linux-musl/release/ya-runtime-http-auth"
-          strip "target/aarch64-unknown-linux-musl/release/ya-http-proxy"
+          #strip "target/aarch64-unknown-linux-musl/release/ya-runtime-http-auth"
+          #strip "target/aarch64-unknown-linux-musl/release/ya-http-proxy"
 
           set -x
           cp target/aarch64-unknown-linux-musl/release/ya-runtime-http-auth "$TARGET_DIR/ya-runtime-http-auth/"
