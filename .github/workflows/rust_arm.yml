@@ -27,11 +27,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Install last stable Rust compiler
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-
       - name: Install last stable Rust cross compiler
         uses: actions-rs/toolchain@v1
         with:
@@ -39,12 +34,19 @@ jobs:
           target: aarch64-unknown-linux-musl
           override: true
 
-      - name: Build binaries
+      - name: Build proxy
         uses: actions-rs/cargo@v1
         with:
           use-cross: true
           command: build
           args: --manifest-path crates/ya-http-proxy/Cargo.toml --bin ya-http-proxy --features bin --release --target aarch64-unknown-linux-musl
+
+      - name: Build runtime
+        uses: actions-rs/cargo@v1
+        with:
+          use-cross: true
+          command: build
+          args: --manifest-path crates/ya-http-proxy/Cargo.toml --release --target aarch64-unknown-linux-musl
 
       - name: Pack
         id: pack
