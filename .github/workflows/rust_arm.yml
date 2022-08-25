@@ -73,15 +73,7 @@ jobs:
           echo "::set-output name=media::application/tar+gzip"
 
       - name: Upload
-        run: echo todo upload ${{ steps.pack.outputs.artifact }}
-
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/upload-artifact@v3
         with:
-          upload_url: ${{ steps.release_upload_url.outputs.result }}
-          asset_path: ./releases/${{ steps.pack.outputs.artifact }}
-          asset_name: ${{ steps.pack.outputs.artifact }}
-          asset_content_type: ${{ steps.pack.outputs.media }}
+          name: ya-runtime-http-auth
+          path: ./releases/${{ steps.pack.outputs.artifact }}
