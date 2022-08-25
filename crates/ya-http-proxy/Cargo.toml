@@ -33,7 +33,6 @@ chrono = { version = "0.4", features = ["serde"] }
 envy = { version = "0.4" }
 futures = { version = "0.3" }
 hyper = { version = "0.14", features = ["full"] }
-hyper-rustls = { version = "0.23", features = ["http2"] }
 log = { version =  "0.4" }
 routerify = { version = "3.0" }
 rustls = { version = "0.20" }

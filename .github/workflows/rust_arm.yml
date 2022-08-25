@@ -26,13 +26,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Install openssl (Windows)
-        if: runner.os == 'Windows'
-        run: |
-          vcpkg install openssl:x64-windows openssl:x64-windows-static
-          vcpkg list
-          vcpkg integrate install
-
       - name: Install Last Stable Rust
         uses: actions-rs/toolchain@v1
         with:
